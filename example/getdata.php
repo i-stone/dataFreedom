@@ -12,6 +12,7 @@ $password = 'root';
 /* * * mysql password ** */
 $db = 'datafreedom';
 
+
 try {
     $dbh = new PDO("mysql:host=$hostname;dbname=$db", $username, $password);
     /*     * * echo a message saying we have connected ** */
