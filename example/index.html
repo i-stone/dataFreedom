@@ -9,7 +9,7 @@
 
         <script src="/js/plugins/uibootstrapangular/ui-bootstrap-tpls-0.11.2.min.js"></script>
         <script src="/js/app.js"></script>
-        
+
     </head>
     <body  ng-app="dataFreedom" ng-controller="dataFreedomCtrl">
         <table style="width: 100%;" border="1">
@@ -24,7 +24,7 @@
                 <td>{{ row.full_name}}</td>
             </tr>
         </table>
-    <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-change="pageChanged()"></pagination>    
+    <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-change="pageChanged()"></pagination>
     <pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
 </body>
 </html>
