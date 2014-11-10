@@ -15,13 +15,15 @@
         <table style="width: 100%;" border="1">
             <tr>
                 <th>id</th>
-                <th>applicant_key</th>
-                <th>full_name</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
             </tr>
             <tr ng-repeat="row in data">
                 <td>{{ row.id}}</td>
-                <td>{{ row.applicant_key}}</td>
-                <td>{{ row.full_name}}</td>
+                <td>{{ row.name}}</td>
+                <td>{{ row.email}}</td>
+                <td>{{ row.city}}</td>
             </tr>
         </table>
     <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-change="pageChanged()"></pagination>

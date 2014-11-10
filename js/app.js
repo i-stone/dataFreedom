@@ -3,7 +3,7 @@
 
     app.controller("dataFreedomCtrl", ['$scope', '$http', function ($scope, $http) {
             $scope.method = 'GET';
-            $scope.url = 'http://officel4.sr/postPagination';
+            $scope.url = '/example/getdata.php';
             $scope.limit = 10;
             $scope.bigCurrentPage = 0;
 

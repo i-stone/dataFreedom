@@ -4,10 +4,10 @@
 $hostname = 'localhost';
 
 /* * * mysql username ** */
-$username = 'root';
+$username = 'test';
 
 /* * * mysql password ** */
-$password = 'root';
+$password = '123456';
 
 /* * * mysql password ** */
 $db = 'datafreedom';
