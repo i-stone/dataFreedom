@@ -9,16 +9,22 @@
 
         <script src="/js/plugins/uibootstrapangular/ui-bootstrap-tpls-0.11.2.min.js"></script>
         <script src="/js/datafreedom.js"></script>
-        <script src="/js/app.js"></script>     
+        <script src="/js/app.js"></script>
 
     </head>
     <body  ng-app="demo" ng-controller="demoCtrl">
+        <div>
+            <form name="serach-form" novalidate >
+                <input type="text" name="name" ng-model="search.name" />
+                <input type="submit" ng-click="search(search)" value="Search"/>
+            </form>
+        </div><br>
         <table style="width: 100%;" border="1">
             <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>City</th>
+                <th>id <a href="">Sort</a></th>
+                <th>Name <a href="">Sort</a></th>
+                <th>Email <a href="">Sort</a></th>
+                <th>City <a href="">Sort</a></th>
             </tr>
             <tr ng-repeat="row in data">
                 <td>{{ row.id}}</td>
