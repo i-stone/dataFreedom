@@ -3,7 +3,7 @@
 
     app.controller("demoCtrl", ['$scope','dataFreedomService', function ($scope,dataFreedomService) {
 
-        dataFreedomService.method = 'GET';
+        dataFreedomService.method = 'POST';        
 
         $scope.fetch=function(){
              dataFreedomService.fetch().then(function(data){
@@ -23,14 +23,13 @@
         };
 
         $scope.pageChanged = function () {
-            dataFreedomService.bigCurrentPage = $scope.bigCurrentPage;
+            dataFreedomService.bigCurrentPage = $scope.bigCurrentPage;            
             $scope.fetch();
         };
 
-        $scope.search = function (search) {
-            console.log(search);
-            //dataFreedomService.search = $scope.search;
-            //$scope.fetch();
+        $scope.search = function (find) {            
+            dataFreedomService.search = find;            
+            $scope.fetch();
         };
 
         $scope.sort = function () {

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <title>Angular directives for Bootstrap</title>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="/js/angular.min.js"></script>
 
         <script src="/js/plugins/uibootstrapangular/ui-bootstrap-tpls-0.11.2.min.js"></script>
         <script src="/js/datafreedom.js"></script>
@@ -14,9 +14,9 @@
     </head>
     <body  ng-app="demo" ng-controller="demoCtrl">
         <div>
-            <form name="serach-form" novalidate >
-                <input type="text" name="name" ng-model="search.name" />
-                <input type="submit" ng-click="search(search)" value="Search"/>
+            <form name="serach-form" novalidate>
+                <input type="text" name="name" ng-model="find.name" />
+                <input type="submit" ng-click="search(find)" value="Search"/>
             </form>
         </div><br>
         <table style="width: 100%;" border="1">

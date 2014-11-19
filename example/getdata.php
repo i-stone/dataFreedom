@@ -28,14 +28,23 @@ $out['per_page']=(!empty($_GET['limit']))?(int) $_GET['limit']:10;
 $offset = (($out['current_page']-1)*$out['per_page']);
 $out['from']=$offset+1;
 $out['to']=$out['from']+($out['per_page']-1);
+
+$where = " WHERE 1=1";
+if(!empty($_POST['search']['name'])){
+    $where .= " AND name like '%".$_POST['search']['name']."%'";
+}
+
+
 //get total rows
-$sql = "SELECT count(*) FROM dummy_data";
+$sql = "SELECT count(*) FROM dummy_data".$where;
 $total = $dbh->query($sql)->fetchColumn(0);
 $out['total']=(int) $total;
 $out['last_page']=ceil($out['total']/$out['per_page']);
 
 /* * * The SQL SELECT statement ** */
-$sql = "SELECT * FROM dummy_data LIMIT ".$offset.",".$out['per_page'];
+$where .= " LIMIT ".$offset.",".$out['per_page'];
+$sql = "SELECT * FROM dummy_data".$where;
+
 $out['data'] = $dbh->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 header('Content-Type: application/json');
