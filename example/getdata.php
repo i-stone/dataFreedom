@@ -34,6 +34,11 @@ if(!empty($_POST['search']['name'])){
     $where .= " AND name like '%".$_POST['search']['name']."%'";
 }
 
+if(!empty($_POST['sort'])){
+    foreach($_POST['sort'] as $key => $val){
+        $where .= " ORDER BY ".$key.' '.$val;
+    }
+}
 
 //get total rows
 $sql = "SELECT count(*) FROM dummy_data".$where;

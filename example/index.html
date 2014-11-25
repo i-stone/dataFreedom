@@ -13,6 +13,7 @@
 
     </head>
     <body  ng-app="demo" ng-controller="demoCtrl">
+        {{sort||JSON}}
         <div>
             <form name="serach-form" novalidate>
                 <input type="text" name="name" ng-model="find.name" />
@@ -21,10 +22,10 @@
         </div><br>
         <table style="width: 100%;" border="1">
             <tr>
-                <th>id <a href="">Sort</a></th>
-                <th>Name <a href="">Sort</a></th>
-                <th>Email <a href="">Sort</a></th>
-                <th>City <a href="">Sort</a></th>
+                <th><a href="#" ng-click="sorting('id')">id <span ng-show="(sort.id && sort.id=='desc')">&#8595;</span><span ng-show="(sort.id && sort.id=='asc')">&#8593;</span></a></th>
+                <th><a href="" ng-click="sorting('name')">Name <span ng-show="(sort.name && sort.name=='desc')">&#8595;</span><span ng-show="(sort.name &&  sort.name=='asc')">&#8593;</span></a></th>
+                <th><a href="" ng-click="sorting('email')">Email <span ng-show="(sort.email && sort.email=='desc')">&#8595;</span><span ng-show="(sort.email &&  sort.email=='asc')">&#8593;</span></a></th>
+                <th><a href=""ng-click="sorting('city')">City <span ng-show="(sort.city && sort.city=='desc')">&#8595;</span><span ng-show="(sort.city && sort.city=='asc')">&#8593;</span></a></th>
             </tr>
             <tr ng-repeat="row in data">
                 <td>{{ row.id}}</td>
